@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:go_router/go_router.dart';
+import 'package:patho_helper_mobile/interface/home_screen.dart';
 
 class Routes {
   static const home = '/home';
@@ -10,12 +11,12 @@ class Routes {
 
 final routerProvider = Provider<GoRouter>((ref) {
   return GoRouter(
-    initialLocation: '/home',
+    initialLocation: '/home/${0}',
     routes: [
       GoRoute(
         name: 'home',
         path: '${Routes.home}/:tab',
-        builder: (BuildContext context, GoRouterState state) => MainScreen(
+        builder: (BuildContext context, GoRouterState state) => HomeScreen(
           key: state.pageKey,
           currentTab: int.tryParse(state.pathParameters['tab'] ?? '') ?? 0,
         ),
