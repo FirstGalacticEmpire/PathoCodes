@@ -11,7 +11,7 @@ class StainsScreen extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     return BasicScreen(
       appContext: context,
-      body: Placeholder(),
+      body: Container(),
       title: 'Stains Screen',
       leftButton: IconButton(
         onPressed: () => Scaffold.of(context).openDrawer(),

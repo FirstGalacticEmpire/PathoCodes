@@ -11,7 +11,7 @@ class FavoritesScreen extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     return BasicScreen(
       appContext: context,
-      body: Placeholder(),
+      body: Container(),
       title: 'Favorites Screen',
       leftButton: IconButton(
         onPressed: () => Scaffold.of(context).openDrawer(),

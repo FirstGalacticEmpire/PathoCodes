@@ -3,8 +3,8 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:ionicons/ionicons.dart';
 import 'package:go_router/go_router.dart';
 import 'package:patho_helper_mobile/interface/favorites_screen.dart';
-import 'package:patho_helper_mobile/interface/icd_10_screen.dart';
-import 'package:patho_helper_mobile/interface/idc_o_screen.dart';
+import 'package:patho_helper_mobile/interface/icd_10/icd_10_screen.dart';
+import 'package:patho_helper_mobile/interface/icd_0/idc_0_screen.dart';
 import 'package:patho_helper_mobile/interface/stains_screen.dart';
 import 'package:patho_helper_mobile/widgets/custom_drawer.dart';
 
@@ -30,7 +30,7 @@ class HomeScreen extends ConsumerWidget {
       const BottomNavigationBarItem(
         icon: Icon(Ionicons.medical),
         activeIcon: Icon(Ionicons.medical),
-        label: 'ICD-O',
+        label: 'ICD-0',
       ),
       const BottomNavigationBarItem(
         icon: Icon(Ionicons.heart),
