@@ -18,12 +18,36 @@ class Icd10DiseasesSubcategoriesScreen extends StatelessWidget {
       body: ListView.builder(
         itemCount: subcategories.length,
         itemBuilder: (context, index) {
-          final sub = subcategories[index]["subcategories"];
+          // final sub = subcategories[index]["subcategories"];
+          var item = subcategories[index];
+          List subs = item["subcategories"] ?? [];
           return ListTile(
             title: Text(subcategories[index]["code"]),
-            subtitle: Column(children: [
+            subtitle:
+                Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
               Text(subcategories[index]["name"]),
-              sub.isNotEmpty ? Text(sub[0]["name"]) : const SizedBox.shrink(),
+              const SizedBox(height: 10),
+              ...subs.map((code) {
+                return code != null
+                    ? Padding(
+                        padding: const EdgeInsets.only(top: 4.0),
+                        child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              code['code'] != ""
+                                  ? Text(code['code'])
+                                  : const SizedBox.shrink(),
+                              Text(code['name'])
+                            ]))
+                    : const SizedBox.shrink();
+              }).toList(),
+              // sub.isNotEmpty ? Text(sub[0]["name"]) : const SizedBox.shrink(),
+              const Divider(
+                height: 20,
+                thickness: 0.5,
+                indent: 0,
+                endIndent: 0,
+              ),
             ]),
           );
         },

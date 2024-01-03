@@ -54,7 +54,7 @@ class CustomDrawer extends StatelessWidget {
                   ),
                   buildDrawerOption(
                     context,
-                    'Favorites',
+                    'Ulubione',
                     () => {
                       context.goNamed(
                         'home',
@@ -66,7 +66,7 @@ class CustomDrawer extends StatelessWidget {
                   ),
                   buildDrawerOption(
                     context,
-                    'Stains',
+                    'Barwienia',
                     () => {
                       context.goNamed(
                         'home',

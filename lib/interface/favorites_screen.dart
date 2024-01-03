@@ -12,7 +12,7 @@ class FavoritesScreen extends ConsumerWidget {
     return BasicScreen(
       appContext: context,
       body: Container(),
-      title: 'Favorites Screen',
+      title: 'Ulubione',
       leftButton: IconButton(
         onPressed: () => Scaffold.of(context).openDrawer(),
         icon: Icon(

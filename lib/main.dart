@@ -1,5 +1,4 @@
 import 'dart:async';
-import 'dart:isolate';
 
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
@@ -9,12 +8,6 @@ Future<void> main() async {
   await runZonedGuarded(() async {
     WidgetsFlutterBinding.ensureInitialized();
 
-    Isolate.current.addErrorListener(
-      RawReceivePort((pair) async {
-        final List<dynamic> errorAndStacktrace = pair;
-      }).sendPort,
-    );
-
     runApp(
       const ProviderScope(
         child: MyApp(),
@@ -22,7 +15,6 @@ Future<void> main() async {
     );
   }, (error, stackTrace) {});
 }
-
 class MyApp extends ConsumerWidget {
   const MyApp({super.key});
 

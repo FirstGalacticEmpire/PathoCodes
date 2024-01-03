@@ -4,7 +4,7 @@ import 'package:ionicons/ionicons.dart';
 import 'package:go_router/go_router.dart';
 import 'package:patho_helper_mobile/interface/favorites_screen.dart';
 import 'package:patho_helper_mobile/interface/icd_10/icd_10_screen.dart';
-import 'package:patho_helper_mobile/interface/icd_0/idc_0_screen.dart';
+import 'package:patho_helper_mobile/interface/icd_0/icd_0_screen.dart';
 import 'package:patho_helper_mobile/interface/stains_screen.dart';
 import 'package:patho_helper_mobile/widgets/custom_drawer.dart';
 
@@ -16,7 +16,7 @@ class HomeScreen extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final pages = <Widget>[
       const ICD10Screen(),
-      const ICDOScreen(),
+      const ICD0Screen(),
       const FavoritesScreen(),
       const StainsScreen(),
     ];
@@ -35,12 +35,12 @@ class HomeScreen extends ConsumerWidget {
       const BottomNavigationBarItem(
         icon: Icon(Ionicons.heart),
         activeIcon: Icon(Ionicons.heart),
-        label: 'Favorites',
+        label: 'Ulubione',
       ),
       const BottomNavigationBarItem(
         icon: Icon(Ionicons.color_fill),
         activeIcon: Icon(Ionicons.color_fill),
-        label: 'Stains',
+        label: 'Barwienia',
       ),
     ];
 

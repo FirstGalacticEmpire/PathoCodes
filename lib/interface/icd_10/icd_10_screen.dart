@@ -25,18 +25,6 @@ class _ICD10ScreenState extends State<ICD10Screen> {
     });
   }
 
-  bool containsSearch(Map<String, dynamic> item, String searchTerm) {
-    if (item['name']?.toLowerCase()?.contains(searchTerm.toLowerCase())) {
-      return true;
-    }
-    if ((item['subcategories']?.length ?? 0) > 0) {
-      return item['subcategories'].any((it) {
-        return containsSearch(it, searchTerm);
-      });
-    }
-    return false;
-  }
-
   Map<String, dynamic> hasInteresting(
       Map<String, dynamic> item, String searchTerm) {
     if (item['name']?.toLowerCase()?.contains(searchTerm.toLowerCase())) {
@@ -109,7 +97,18 @@ class _ICD10ScreenState extends State<ICD10Screen> {
             itemBuilder: (context, index) {
               return ListTile(
                 title: Text(_filteredItems[index]["code"]),
-                subtitle: Text(_filteredItems[index]["name"]),
+                subtitle: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      const SizedBox(height: 10),
+                      Text(_filteredItems[index]["name"]),
+                      const Divider(
+                        height: 20,
+                        thickness: 0.5,
+                        indent: 0,
+                        endIndent: 0,
+                      ),
+                    ]),
                 trailing: const Icon(Icons.arrow_forward_ios, size: 20),
                 onTap: () {
                   context.pushNamed('icd_10_subcategories',
@@ -123,7 +122,7 @@ class _ICD10ScreenState extends State<ICD10Screen> {
           ),
         ),
       ]),
-      title: 'ICD-10 Screen',
+      title: 'ICD-10',
       leftButton: IconButton(
         onPressed: () => Scaffold.of(context).openDrawer(),
         icon: Icon(

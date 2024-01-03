@@ -20,7 +20,17 @@ class Icd10SubcategoriesScreen extends StatelessWidget {
         itemBuilder: (context, index) {
           return ListTile(
             title: Text(subcategories[index]["code"]),
-            subtitle: Text(subcategories[index]["name"]),
+            subtitle:
+                Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+              const SizedBox(height: 10),
+              Text(subcategories[index]["name"]),
+              const Divider(
+                height: 20,
+                thickness: 0.5,
+                indent: 0,
+                endIndent: 0,
+              ),
+            ]),
             trailing: const Icon(Icons.arrow_forward_ios, size: 20),
             onTap: () {
               context.pushNamed('icd_10_diseases',
