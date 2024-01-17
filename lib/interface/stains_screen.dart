@@ -12,7 +12,7 @@ class StainsScreen extends ConsumerWidget {
     return BasicScreen(
       appContext: context,
       body: Container(),
-      title: 'Barwienia',
+      title: 'Barwieniaj',
       leftButton: IconButton(
         onPressed: () => Scaffold.of(context).openDrawer(),
         icon: Icon(

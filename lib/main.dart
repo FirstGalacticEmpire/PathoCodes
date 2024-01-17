@@ -23,7 +23,7 @@ class MyApp extends ConsumerWidget {
     final router = ref.watch(routerProvider);
 
     return MaterialApp.router(
-      title: 'Patho helper',
+      title: 'PathoCodes!',
       builder: (context, child) {
         return child ?? Container();
       },
